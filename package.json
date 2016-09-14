@@ -1,7 +1,7 @@
 {
-	"name": "cnfg",
-	"version": "1.0.1",
-	"description": "Hierarchical environment configuration for node.js applications",
+	"name": "cnfg-ng",
+	"version": "1.0.2",
+	"description": "(deprecated fork) Hierarchical environment configuration for node.js applications, forked from cnfg",
 	"main": "cnfg.js",
 	"scripts": {
 		"prepublish": "run-s test",
