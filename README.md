@@ -1,11 +1,18 @@
-cnfg [![Build Status](https://travis-ci.org/boo1ean/cnfg.png?branch=master)](https://travis-ci.org/boo1ean/cnfg)
+*This package as been deprecated as it was a temporary release whilst my pull
+request for the `walkdir` dependency removal was being reviewd. Please use the
+official [cnfg](http://npmjs.com/package/cnfg) package instead.*
+
+cnfg-ng
 ====
 
-Hierarchical environment configuration for node.js applications
+Hierarchical environment configuration for node.js applications. This package is forked from
+`cnfg` to remove dependency on `walkdir` which provides unexpected results on Windows (skips
+configuration files) and to allow the consumer to specify overriding file extensions to load,
+for example when loading from within ts-node
 
 ## Installation
 
-	npm install cnfg
+	npm install cnfg-ng
 
 ## Basic configuration
 
@@ -40,7 +47,7 @@ Extracting config:
 ```javascript
 // cnfg requires absolute path to the base config directory
 var path = __dirname + '/config';
-var config = require('cnfg')(path);
+var config = require('cnfg-ng')(path);
 
 // All below statements are true
 config.db.host == 'localhost';
@@ -96,7 +103,7 @@ Put config extractor to `index.js` in `config` folder for convenience
 // config/index.js
 // Put index js in config base directory and whe you require config dir
 // it will return neat appropriate env config object
-module.exports = require('cnfg')(__dirname);
+module.exports = require('cnfg-ng')(__dirname);
 ```
 
 Now use the config:
@@ -120,7 +127,7 @@ By default `process.env.NODE_ENV` value will be used as environment if it isn't 
 Also it is possible to specify environment manually passing it as seconf arg to `cnfg`:
 
 ```javascript
-require('cnfg')(path_to_config, 'staging')
+require('cnfg-ng')(path_to_config, 'staging')
 ```
 
 ## process.env overrides
